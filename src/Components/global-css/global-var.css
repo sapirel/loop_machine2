@@ -1,0 +1,10 @@
+body{
+    --primary: #febf63;
+    --secondary: #ede682;
+    --light: #ade498;
+    /* --dark: #7fdbda; */
+    --dark: #868d8d;
+
+    --clicked: #dfdede;
+    --iconColor: rgb(238, 180, 104);
+}

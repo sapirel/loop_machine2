@@ -1,0 +1,28 @@
+.pad{
+    background: var(--secondary);
+    display: flex;
+    flex: 0 0 30%;
+    font-weight: bolder;
+    color: var(--dark);
+    text-align: center;
+    cursor: pointer;
+    border-radius: 2px;
+    margin: 10px 10px 0 0;
+    justify-content: center;
+    align-items: center;
+    &:hover{
+        opacity: 0.6;
+	    box-shadow: 0px -2px 20px 5px rgba(0, 0, 0, 0.4);
+    }
+}
+.pad_playning{
+    background: var(--clicked);
+}
+.wrapper_pad_content{
+    align-items: center;
+    justify-content: center;
+}
+.icon{
+    color: var(--iconColor);
+    justify-content: center;
+}
