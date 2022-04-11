@@ -63,14 +63,17 @@ const Machine = ({ palyList }) => {
     //manage queue of playlist
     const UpdateLoopTOq = (elm) => {
         let { id, audio } = elm;
-        let isfAudioInPlayList = playingQueue.find(obj => obj.id == id);
-        let newElm = { id, audio: new Audio(audio) };
+        let    millis,
+            secondsFromStartedLoop,
+            secondWait;
+        let    isfAudioInPlayList = playingQueue.find(obj => obj.id == id),
+             newElm = { id, audio: new Audio(audio) };
         setPlayingQueue([...playingQueue, newElm])
         if (!isfAudioInPlayList) {
             if (playingQueue.length > 0) {
-                let millis = Date.now() - start;
-                let secondsFromStartedLoop = (Math.floor(millis / 1000));
-                let secondWait = (8 - (secondsFromStartedLoop % 8)) * 1000;
+                millis = Date.now() - start;
+                secondsFromStartedLoop = (Math.floor(millis / 1000));
+                secondWait = (8 - (secondsFromStartedLoop % 8)) * 1000;
                 const timer = setTimeout(() => {
                         playSquareLoop(newElm);
                 }, secondWait);
@@ -100,7 +103,7 @@ const Machine = ({ palyList }) => {
     const machineChangeStatus = () => {
         setIsPlaying(!isPlaying);
     }
-    console.log('-playingQueue->', playingQueue);
+
     return (
         <div className='container'>
             <div className="loop_machine">
